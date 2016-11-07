@@ -5,8 +5,8 @@
 /tmp
 
 # dependencies
-/node_modules
-/bower_components
+node_modules
+bower_components
 
 # IDEs and editors
 /.idea
@@ -17,13 +17,13 @@
 .settings/
 
 # misc
-/.sass-cache
-/connect.lock
-/coverage/*
-/libpeerconnection.log
-npm-debug.log
+.sass-cache
+*/connect.lock
+*/coverage/*
+*/libpeerconnection.log
+*/npm-debug.log
 testem.log
-/typings
+*/typings
 
 # e2e
 /e2e/*.js
@@ -31,7 +31,7 @@ testem.log
 
 # app
 /app/*.js
-/app.*.map
+/app/*.map
 
 #System Files
 .DS_Store
