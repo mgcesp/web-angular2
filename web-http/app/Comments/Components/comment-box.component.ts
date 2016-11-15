@@ -12,11 +12,12 @@ export class CommentBoxComponent {
 	
 	constructor(private commentService:CommentService) {}
 
-	@Input() comment: Comment;
+	@Input() comment: Comment; // holds data passed from a parent component
 	@Input() listId: string;
 	@Input() editId: string;
 
 	editComment() {
+		// emmits an edit comment tracked by the Input ID
 		EmitterService.get(this.editId).emit(this.comment);
 	}
 

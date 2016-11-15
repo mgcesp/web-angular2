@@ -19,7 +19,9 @@ var CommentService = (function () {
         // base url
         this.commentsUrl = 'http://localhost:8000/api/commments';
     }
+    // We make sure the methods return an observable of type Comment
     CommentService.prototype.getComments = function () {
+        // ..using the http get request
         return this.http.get(this.commentsUrl)
             .map(function (res) { return res.json(); })
             .catch(function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error'); });

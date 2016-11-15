@@ -12,32 +12,41 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
-var comments_module_1 = require('./comments/comments.module');
-var app_component_1 = require('./app.component');
-var emitter_service_1 = require('./emitter.service');
-var AppModule = (function () {
-    function AppModule() {
+var comment_box_component_1 = require('./components/comment-box.component');
+var comment_list_component_1 = require('./components/comment-list.component');
+var comment_form_component_1 = require('./components/comment-form.component');
+var index_1 = require('./components/index');
+var comment_service_1 = require('./services/comment.service');
+var CommentModule = (function () {
+    function CommentModule() {
     }
-    AppModule = __decorate([
+    CommentModule = __decorate([
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 http_1.JsonpModule,
-                comments_module_1.CommentModule
             ],
             declarations: [
-                app_component_1.AppComponent
+                comment_box_component_1.CommentBoxComponent,
+                comment_form_component_1.CommentFormComponent,
+                comment_list_component_1.CommentListComponent,
+                index_1.CommentComponent
             ],
             providers: [
-                emitter_service_1.EmitterService
+                comment_service_1.CommentService
             ],
-            bootstrap: [app_component_1.AppComponent]
+            exports: [
+                comment_box_component_1.CommentBoxComponent,
+                comment_form_component_1.CommentFormComponent,
+                comment_list_component_1.CommentListComponent,
+                index_1.CommentComponent
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], CommentModule);
+    return CommentModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.CommentModule = CommentModule;
+//# sourceMappingURL=comments.module.js.map

@@ -13,8 +13,9 @@ export class CommentService {
 	constructor(private http: Http) {}
 	// base url
 	private commentsUrl = 'http://localhost:8000/api/commments';
-
+	// We make sure the methods return an observable of type Comment
 	getComments():Observable<Comment[]> {
+		// ..using the http get request
 		return this.http.get(this.commentsUrl)
 										.map((res:Response) => res.json())
 										.catch((error:any) => Observable.throw(error.json().error || 'Server error'));

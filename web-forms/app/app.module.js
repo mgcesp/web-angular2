@@ -12,9 +12,10 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
-var comments_module_1 = require('./comments/comments.module');
 var app_component_1 = require('./app.component');
-var emitter_service_1 = require('./emitter.service');
+var app_simpleform_1 = require('./app.simpleform');
+var app_complexform_1 = require('./app.complexform');
+var app_formvalidation_1 = require('./app.formvalidation');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,15 +24,14 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                http_1.HttpModule,
-                http_1.JsonpModule,
-                comments_module_1.CommentModule
+                forms_1.ReactiveFormsModule,
+                http_1.HttpModule
             ],
             declarations: [
-                app_component_1.AppComponent
-            ],
-            providers: [
-                emitter_service_1.EmitterService
+                app_component_1.AppComponent,
+                app_simpleform_1.SimpleFormComponent,
+                app_complexform_1.ComplexFormComponent,
+                app_formvalidation_1.FormValidationComponent,
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

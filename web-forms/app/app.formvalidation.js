@@ -9,24 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-// This class registers events in a _emitters object and
-// emits them when they are called using the get() method
-var EmitterService = (function () {
-    function EmitterService() {
+var FormValidationComponent = (function () {
+    function FormValidationComponent() {
     }
-    // Set a new event in the store with a given ID as key
-    EmitterService.get = function (ID) {
-        if (!this._emitters[ID])
-            this._emitters[ID] = new core_1.EventEmitter();
-        return this._emitters[ID];
+    FormValidationComponent.prototype.ngOnInit = function () {
     };
-    // Event store
-    EmitterService._emitters = {};
-    EmitterService = __decorate([
-        core_1.Injectable(), 
+    FormValidationComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'form-validation',
+            templateUrl: 'app.formvalidation.html'
+        }), 
         __metadata('design:paramtypes', [])
-    ], EmitterService);
-    return EmitterService;
+    ], FormValidationComponent);
+    return FormValidationComponent;
 }());
-exports.EmitterService = EmitterService;
-//# sourceMappingURL=emitter.service.js.map
+exports.FormValidationComponent = FormValidationComponent;
+//# sourceMappingURL=app.formvalidation.js.map

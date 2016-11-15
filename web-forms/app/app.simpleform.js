@@ -9,24 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-// This class registers events in a _emitters object and
-// emits them when they are called using the get() method
-var EmitterService = (function () {
-    function EmitterService() {
+var SimpleFormComponent = (function () {
+    function SimpleFormComponent() {
     }
-    // Set a new event in the store with a given ID as key
-    EmitterService.get = function (ID) {
-        if (!this._emitters[ID])
-            this._emitters[ID] = new core_1.EventEmitter();
-        return this._emitters[ID];
+    SimpleFormComponent.prototype.ngOnInit = function () { };
+    SimpleFormComponent.prototype.submitForm = function (form) {
+        console.log('Form Data: ');
+        console.log(form);
     };
-    // Event store
-    EmitterService._emitters = {};
-    EmitterService = __decorate([
-        core_1.Injectable(), 
+    SimpleFormComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'simple-form',
+            templateUrl: 'app.simpleform.html'
+        }), 
         __metadata('design:paramtypes', [])
-    ], EmitterService);
-    return EmitterService;
+    ], SimpleFormComponent);
+    return SimpleFormComponent;
 }());
-exports.EmitterService = EmitterService;
-//# sourceMappingURL=emitter.service.js.map
+exports.SimpleFormComponent = SimpleFormComponent;
+//# sourceMappingURL=app.simpleform.js.map

@@ -9,47 +9,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var comment_1 = require('../model/comment');
-var emitter_service_1 = require('../../emitter.service');
 var comment_service_1 = require('../services/comment.service');
-var CommentBoxComponent = (function () {
-    function CommentBoxComponent(commentService) {
+var emitter_service_1 = require('../../emitter.service');
+var CommentListComponent = (function () {
+    function CommentListComponent(commentService) {
         this.commentService = commentService;
     }
-    CommentBoxComponent.prototype.editComment = function () {
-        // emmits an edit comment tracked by the Input ID
-        emitter_service_1.EmitterService.get(this.editId).emit(this.comment);
+    CommentListComponent.prototype.ngOnInit = function () {
+        this.loadComments();
     };
-    CommentBoxComponent.prototype.deleteComment = function (id) {
+    CommentListComponent.prototype.loadComments = function () {
         var _this = this;
-        this.commentService.removeComment(id).subscribe(function (comments) {
-            emitter_service_1.EmitterService.get(_this.listId).emit(comments);
-        }, function (err) {
+        this.commentService.getComments().subscribe(function (comments) { return _this.comments = comments; }, function (err) {
             console.log(err);
         });
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', comment_1.Comment)
-    ], CommentBoxComponent.prototype, "comment", void 0);
-    __decorate([
-        // holds data passed from a parent component
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], CommentBoxComponent.prototype, "listId", void 0);
+    CommentListComponent.prototype.ngOnChanges = function (changes) {
+        var _this = this;
+        emitter_service_1.EmitterService.get(this.listId).subscribe(function (comments) { _this.loadComments(); });
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
-    ], CommentBoxComponent.prototype, "editId", void 0);
-    CommentBoxComponent = __decorate([
+    ], CommentListComponent.prototype, "listId", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], CommentListComponent.prototype, "editId", void 0);
+    CommentListComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
-            selector: 'comment-box',
-            templateUrl: 'comment-box.component.html'
+            selector: 'comment-list',
+            template: "\n\t<comment-box\n\t\t[editId]=\"editId\"\n\t\t[listId]=\"listId\"\n\t\t*ngFor=\"let comment of comments\"\n\t\t[comment]=\"comment\">\n\t</comment-box>\n\t"
         }), 
         __metadata('design:paramtypes', [comment_service_1.CommentService])
-    ], CommentBoxComponent);
-    return CommentBoxComponent;
+    ], CommentListComponent);
+    return CommentListComponent;
 }());
-exports.CommentBoxComponent = CommentBoxComponent;
-//# sourceMappingURL=comment-box.component.js.map
+exports.CommentListComponent = CommentListComponent;
+//# sourceMappingURL=comment-list.component.js.map

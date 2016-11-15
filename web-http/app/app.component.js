@@ -9,13 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var index_1 = require('./comments/components/index');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>This is Manolo</h1>'
+            template: "\n\t<h1>This is Manolo</h1>\n\t<comment-widget></comment-widget>\n\t",
+            directives: [index_1.CommentComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
