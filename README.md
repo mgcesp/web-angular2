@@ -12,3 +12,5 @@
 * Angular.io walktrough project
 ## web-http
 * Working with http requests in Angular
+## web-router
+* Single page app with routing
