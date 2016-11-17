@@ -9,17 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var pets_service_1 = require('../pets.service');
 var CatListComponent = (function () {
-    function CatListComponent() {
+    function CatListComponent(petService) {
+        this.petService = petService;
     }
     CatListComponent.prototype.ngOnInit = function () {
+        this.cats = this.petService.findPets('cat');
     };
     CatListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            template: "\n\t<h2>Cats</h2>\n\t<p>List of cats</p>\n\t"
+            template: "\n\t<h2>Cats</h2>\n\t<p>List of cats</p>\n\t<ul>\n\t\t<li *ngFor=\"let cat of cats | async\">\n\t\t\t<a [routerLink]=\"['/cats', cat.id.$t]\">{{cat.name.$t}}</a>\n\t\t</li>\n\t</ul>\n\t"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [pets_service_1.PetService])
     ], CatListComponent);
     return CatListComponent;
 }());

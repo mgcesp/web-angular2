@@ -21,7 +21,7 @@ var DogListComponent = (function () {
     DogListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            template: "\n\t<h2>Dogs</h2>\n\t<p>List of dogs</p>\n\t"
+            template: "\n\t<h2>Dogs</h2>\n\t<p>List of dogs</p>\n\t<ul>\n\t\t<li *ngFor=\"let dog of dogs | async\">\n\t\t\t<a [routerLink]=\"['/dogs', dog.id.$t]\">{{dog.name.$t}}</a>\n\t\t</li>\n\t</ul>\n\t"
         }), 
         __metadata('design:paramtypes', [pets_service_1.PetService])
     ], DogListComponent);

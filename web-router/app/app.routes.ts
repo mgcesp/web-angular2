@@ -1,12 +1,13 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CatListComponent } from './cats/cat-list.component';
-import { DogListComponent } from './dogs/dog-list.component';
+
+import { dogRoutes } from './dogs/dog.routes';
+import { catRoutes } from './cats/cat.routes';
 
 export const routes: Routes = [
 	{ path: '', redirectTo: '/dogs', pathMatch: 'full' },
-	{ path: 'cats', component: CatListComponent },
-	{ path: 'dogs', component: DogListComponent }
+	...dogRoutes,
+	...catRoutes
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

@@ -13,7 +13,7 @@ export class PetService {
 		let params = new URLSearchParams();
 
 		params.set('key', '555f8155d42d5c9be4705beaf4cce089');
-		params.set('location', 'texas');
+		params.set('location', 'washington');
 		params.set('animal', animal);
 		params.set('format', 'json');
 		params.set('callback', 'JSONP_CALLBACK');
@@ -33,6 +33,6 @@ export class PetService {
 
 		return this.jsonp
 			.get(this.apiUrl + endPoint, { search: params })
-			.map(response => <string[]> response.json().petfinder.pet);
+			.map(response => {return response.json().petfinder.pet});
 	}
 }

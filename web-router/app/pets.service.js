@@ -20,7 +20,7 @@ var PetService = (function () {
         var endPoint = 'pet.find';
         var params = new http_1.URLSearchParams();
         params.set('key', '555f8155d42d5c9be4705beaf4cce089');
-        params.set('location', 'texas');
+        params.set('location', 'washington');
         params.set('animal', animal);
         params.set('format', 'json');
         params.set('callback', 'JSONP_CALLBACK');

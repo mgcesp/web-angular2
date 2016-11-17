@@ -15,6 +15,8 @@ var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var dog_list_component_1 = require('./dogs/dog-list.component');
 var cat_list_component_1 = require('./cats/cat-list.component');
+var dog_details_component_1 = require('./dogs/dog-details.component');
+var cat_details_component_1 = require('./cats/cat-details.component');
 var pets_service_1 = require('./pets.service');
 var app_routes_1 = require('./app.routes');
 var AppModule = (function () {
@@ -32,7 +34,9 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 dog_list_component_1.DogListComponent,
-                cat_list_component_1.CatListComponent
+                cat_list_component_1.CatListComponent,
+                dog_details_component_1.DogDetailsComponent,
+                cat_details_component_1.CatDetailsComponent
             ],
             providers: [
                 pets_service_1.PetService
