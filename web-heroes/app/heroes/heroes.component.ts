@@ -1,18 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../heroes/hero';
 
-import { HeroService } from '../services/hero.service';
-
 @Component({
 	selector: 'my-heroes',
-	templateUrl: 'heroes.component.html'
+	template: `
+	<h1>{{title}}</h1>
+	<ul>
+		<li *ngFor="let hero of heroes">
+			<p>{{hero.name}}</p>
+			<p>{{hero.alias}}</p>
+		</li>
+	</ul>
+	`
 })
 export class HeroesComponent implements OnInit {
-	errorMessage: string;
-	heroes: Hero[];
-	mode = 'Observable';
-	
-	constructor(private heroService: HeroService) {}
+	title = "Dev Heroes";
+
+	heroes = [
+		{name: 'Manolo', alias: 'mcfresh'},
+		{name: 'Andrew', alias: 'sleepy'},
+		{name: 'Luis', alias: 'back2back'}
+	];
+
+	constructor() {}
 
 	ngOnInit() {
 		

@@ -1,21 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+
+import { EqualValidator } from './equal-validator.directive';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
 
 @NgModule({
 	imports: [
 		BrowserModule,
-		HttpModule
+		FormsModule
 	],
-	declarations: [
-		AppComponent,
-		HeroesComponent
-	],
-	providers: [
-	],
+	declarations: [AppComponent, EqualValidator],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -9,20 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hero_service_1 = require('../services/hero.service');
 var HeroesComponent = (function () {
-    function HeroesComponent(heroService) {
-        this.heroService = heroService;
-        this.mode = 'Observable';
+    function HeroesComponent() {
+        this.title = "Dev Heroes";
+        this.heroes = [
+            { name: 'Manolo', alias: 'mcfresh' },
+            { name: 'Andrew', alias: 'sleepy' },
+            { name: 'Luis', alias: 'back2back' }
+        ];
     }
     HeroesComponent.prototype.ngOnInit = function () {
     };
     HeroesComponent = __decorate([
         core_1.Component({
             selector: 'my-heroes',
-            templateUrl: 'heroes.component.html'
+            template: "\n\t<h1>{{title}}</h1>\n\t<ul>\n\t\t<li *ngFor=\"let hero of heroes\">\n\t\t\t<p>{{hero.name}}</p>\n\t\t\t<p>{{hero.alias}}</p>\n\t\t</li>\n\t</ul>\n\t"
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService])
+        __metadata('design:paramtypes', [])
     ], HeroesComponent);
     return HeroesComponent;
 }());

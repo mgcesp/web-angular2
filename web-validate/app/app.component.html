@@ -1,0 +1,46 @@
+<div class="container">
+	<h1>Add User</h1>
+	<form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid)">
+		<!-- USERNAME -->
+		<div class="form-group"> 
+			<label>Username</label>
+			<input class="form-control" type="text" class="form-control" name="username" [ngModel]="user.username" 
+        required minlength="5" maxlength="8" #username="ngModel">
+			<small class="text-danger" [hidden]="username.valid || (username.pristine && !f.submitted)">
+				Username is required (min 5 characters)
+			</small>
+		</div>
+		<!-- <pre *ngIf="username.errors">{{username.errors | json}}</pre> -->
+		<!-- EMAIL -->
+		<div class="form-group"> 
+			<label>Email</label>
+			<input class="form-control" type="email" name="email" [ngModel]="user.email" required #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+      <small class="text-danger" [hidden]="email.valid || (email.pristine && !f.submitted)">
+      	Email is required and format should be <i>manolo@tupapa.com</i>
+      </small>
+		</div>
+		<!-- PASSWORD -->
+		<div class="form-group"> 
+			<label>Password</label>
+			<input class="form-control" type="password" name="password" [ngModel]="user.password" required #password="ngModel" validateEqual="confirmPassword" reverse="true">
+			<small class="text-danger" [hidden]="password.valid || (password.pristine && !f.submitted)">
+				Password is required
+			</small>
+		</div>
+		<!-- CONFIRM PASSWORD -->
+		<div class="form-group"> 
+			<label>Confirm Password</label>
+			<input class="form-control" type="password" name="confirmPassword" [ngModel]="user.confirmPassword" required #confirmPassword="ngModel" validateEqual="password" reverse="false">
+			<small class="text-danger" [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)">
+				Passwords don't match
+			</small>
+		</div>
+		<button class="btn btn-default" type="submit">Submit</button>
+	</form>
+<!-- 	<div class="margin-20" *ngIf="f">
+    <div>Form details:-</div>
+    <pre>Is form valid?: <br>{{f.valid | json}}</pre>
+    <pre>Is form submitted?: <br>{{f.submitted | json}}</pre>
+    <pre>submitted value: <br>{{f.value | json}}</pre>
+  </div> -->
+</div>

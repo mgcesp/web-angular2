@@ -12,10 +12,22 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.user = {
+            username: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+        };
+    };
+    AppComponent.prototype.save = function (model, isValid) {
+        console.log(model, isValid);
+    };
     AppComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-app',
-            template: "\n\t<my-heroes></my-heroes>\n\t"
+            templateUrl: 'app.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

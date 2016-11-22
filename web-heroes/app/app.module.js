@@ -13,7 +13,6 @@ var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var heroes_component_1 = require('./heroes/heroes.component');
-var hero_service_1 = require('./services/hero.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,9 +26,7 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 heroes_component_1.HeroesComponent
             ],
-            providers: [
-                hero_service_1.HeroService
-            ],
+            providers: [],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
