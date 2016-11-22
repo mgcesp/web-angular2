@@ -13,9 +13,10 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
-var app_simpleform_1 = require('./app.simpleform');
-var app_complexform_1 = require('./app.complexform');
-var app_formvalidation_1 = require('./app.formvalidation');
+var app_simpleform_1 = require('./simple-form/app.simpleform');
+var app_complexform_1 = require('./complex-form/app.complexform');
+var app_formvalidation_1 = require('./form-validation/app.formvalidation');
+var model_driven_component_1 = require('./model-driven/model-driven.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,6 +33,7 @@ var AppModule = (function () {
                 app_simpleform_1.SimpleFormComponent,
                 app_complexform_1.ComplexFormComponent,
                 app_formvalidation_1.FormValidationComponent,
+                model_driven_component_1.ModelDrivenComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
