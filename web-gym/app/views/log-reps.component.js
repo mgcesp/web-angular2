@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var LogRepsComponent = (function () {
     function LogRepsComponent() {
-        this.selectTask = new core_1.EventEmitter();
         this.repCount = 0;
     }
     LogRepsComponent.prototype.ngOnInit = function () { };
@@ -26,10 +25,6 @@ var LogRepsComponent = (function () {
     LogRepsComponent.prototype.setReps = function (task) {
         task.reps = this.repCount;
     };
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], LogRepsComponent.prototype, "selectTask", void 0);
     LogRepsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

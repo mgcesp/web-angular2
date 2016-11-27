@@ -16,8 +16,6 @@ export class LogRepsComponent implements OnInit {
 	activeTask: Task;
 	repCount: number;
 
-	@Output() selectTask = new EventEmitter<string>();
-
 	constructor() {
 		this.repCount = 0;
 	}
