@@ -1,0 +1,29 @@
+html,
+body {
+	background: #000;
+}
+.app {
+	height: 100vh;
+	width: 320px;
+	background: #34B;
+}
+nav {
+	position: fixed;
+	bottom: 0;
+	width: 320px;
+	height: 40px;
+	background: #6f6;
+}
+nav a {
+	display: block;
+	float: left;
+	width: 33.33%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.is-active {
+	background: green;
+}
