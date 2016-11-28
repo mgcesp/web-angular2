@@ -9,22 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var AppModule = (function () {
-    function AppModule() {
+var ChildComponent = (function () {
+    function ChildComponent() {
+        this.childChanged = new core_1.EventEmitter();
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [
-                app_component_1.AppComponent
-            ],
-            bootstrap: [app_component_1.AppComponent]
+    ChildComponent.prototype.onChange = function (value) {
+        // emit function fires up event
+        this.childChanged.emit(value);
+    };
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], ChildComponent.prototype, "childChanged", void 0);
+    ChildComponent = __decorate([
+        core_1.Component({
+            selector: 'app-child',
+            template: "\n\t<h2>Child Component</h2>\n\t<input type=\"text\" #childInput (keyup)=\"onChange(childInput.value)\"/>\n\t<h3>{{incomingData}}</h3>\n\t",
+            inputs: ['incomingData:passedData'],
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], ChildComponent);
+    return ChildComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.ChildComponent = ChildComponent;
+//# sourceMappingURL=child.component.js.map
