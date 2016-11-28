@@ -9,15 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var child_component_1 = require('./inputs-and-outputs/child.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n\t<h1>Inputs and Outputs</h1>\n\t<h2>Parent Component</h2>\n\t<label>Enter ParentComponent value:</label>\n\t<input type=\"text\" #ptext (keyup)=\"0\">\n\t<p>Value from child component</p>\n\t{{childData}}\n\t<child-component (childEvent)=\"childData=$event\" [parentData]=\"ptext.value\"></child-component>\n\t",
-            directives: [child_component_1.ChildComponent]
+            template: "\n\t<h1>Inputs and Outputs</h1>\n\t<h2>Parent Component</h2>\n\t<input type=\"text\" #localVariable (keyup)=\"0\"/>\n\t<app-child [parentValue]=\"localVariable.value\"></app-child>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

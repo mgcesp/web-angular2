@@ -9,19 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var child_component_1 = require('./child.component');
-var ParentComponent = (function () {
-    function ParentComponent() {
+var ChildComponent = (function () {
+    function ChildComponent() {
     }
-    ParentComponent = __decorate([
+    ChildComponent.prototype.ngOnInit = function () {
+    };
+    ChildComponent = __decorate([
         core_1.Component({
-            selector: 'parent-component',
-            template: "\n\t<h1>Inputs and Outputs</h1>\n\t<h2>Parent Component</h2>\n\t<label>Enter ParentComponent value:</label>\n\t<input type=\"text\" #ptext (keyup)=\"0\">\n\t<p>Value from child component</p>\n\t{{childData}}\n\t<child-component (childEvent)=\"childData=$event\" [parentData]=\"ptext.value\"></child-component>\n\t",
-            directives: [child_component_1.ChildComponent]
+            moduleId: module.id,
+            selector: 'app-child',
+            template: "\n\t\t<h2>Child Component</h2>\n\t\t<input type=\"text\"/>\n\t\t<p>The parent value is {{parentValue}}</p>\n\t",
+            inputs: ['parentValue']
         }), 
         __metadata('design:paramtypes', [])
-    ], ParentComponent);
-    return ParentComponent;
+    ], ChildComponent);
+    return ChildComponent;
 }());
-exports.ParentComponent = ParentComponent;
-//# sourceMappingURL=parent.component.js.map
+exports.ChildComponent = ChildComponent;
+//# sourceMappingURL=child.component.js.map
