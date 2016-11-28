@@ -11,18 +11,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
-// import { ChildComponent } from './inputs-and-outputs/child.component';
-// import { ParentComponent } from './inputs-and-outputs/parent.component';
-var child_component_1 = require('./child.component');
+// Passing Data
+var child_component_1 = require('./passing-data/child.component');
+var parent_component_1 = require('./passing-data/parent.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
+            imports: [
+                platform_browser_1.BrowserModule
+            ],
             declarations: [
                 app_component_1.AppComponent,
-                child_component_1.ChildComponent
+                child_component_1.ChildComponent,
+                parent_component_1.ParentComponent,
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

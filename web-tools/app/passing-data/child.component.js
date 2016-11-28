@@ -9,22 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var core_2 = require('@angular/core');
 var ChildComponent = (function () {
     function ChildComponent() {
-        this.childEvent = new core_2.EventEmitter();
+        this.childChanged = new core_1.EventEmitter();
     }
     ChildComponent.prototype.onChange = function (value) {
-        this.childEvent.emit(value);
-    };
-    ChildComponent.prototype.ngOnInit = function () {
+        this.childChanged.emit(value);
     };
     ChildComponent = __decorate([
         core_1.Component({
-            selector: 'child-component',
-            template: "\n\t<h2>ChildComponent</h2>\n\t<label>Enter ChildComponent value:</label>\n\t<input type=\"text\" #childText (keyup)=\"onChange(childText.value)\"/>\n\t<p>Value from parent component</p>\n\t{{parentData}}\n\t",
-            inputs: ['parentData'],
-            outputs: ['childEvent']
+            selector: 'child',
+            template: "\n\t<h2>Child Component</h2>\n\t<input type=\"text\" #childInput (keyup)=\"onChange(childInput.value)\"/>\n\t<h3>Parent data: {{incomingData}}</h3>\n\t",
+            inputs: ['incomingData:outgoingData'],
+            outputs: ['childChanged']
         }), 
         __metadata('design:paramtypes', [])
     ], ChildComponent);
