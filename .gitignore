@@ -15,6 +15,7 @@ bower_components
 .classpath
 *.launch
 .settings/
+*.sublime-workspace
 
 # misc
 .sass-cache
