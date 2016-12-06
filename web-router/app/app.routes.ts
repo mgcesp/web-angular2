@@ -7,7 +7,8 @@ import { catRoutes } from './cats/cat.routes';
 export const routes: Routes = [
 	{ path: '', redirectTo: '/dogs', pathMatch: 'full' },
 	...dogRoutes,
-	...catRoutes
+	...catRoutes,
+	{ path: '**', redirectTo: '/dogs', pathMatch: 'full' }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

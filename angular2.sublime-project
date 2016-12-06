@@ -2,8 +2,19 @@
 	"folders":
 	[
 		{
-			"path": ".",
-			"file_exclude_patterns": ["web-gym/app/*.js"]
+			"file_exclude_patterns":
+			[
+				"web-gym/app/*.js",
+				"web-tools/app/*.js",
+				"web-router/app/*.js"
+			],
+			"path": "."
+		},
+		{
+			"path": "/Users/mcespedes/Developer/dev/web-app"
+		},
+		{
+			"path": "/Users/mcespedes/Developer/dev/web-gym"
 		}
 	]
 }
